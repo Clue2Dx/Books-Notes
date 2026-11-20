@@ -1,0 +1,205 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name=claude:viewport-fit-sides content=cover><style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-right:env(safe-area-inset-right,0px);padding-bottom:env(safe-area-inset-bottom,0px);padding-left:env(safe-area-inset-left,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}</style><style>.md-table{overflow-x:auto}@media print{.md-table{overflow-x:visible}}</style><style>:root{color-scheme:light dark;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}@media (prefers-color-scheme:dark){:root:where(:not([data-theme="light"])){--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}}:root[data-theme="dark"]{color-scheme:dark;--md-bg:#0d0d0d;--md-text:rgba(255,255,255,.85);--md-muted:rgba(255,255,255,.6);--md-fill:rgba(255,255,255,.06);--md-fill-strong:rgba(255,255,255,.09);--md-rule:rgba(255,255,255,.14);--md-rule-strong:rgba(255,255,255,.22);--md-link:hsl(210 100% 72%)}:root[data-theme="light"]{color-scheme:light}@media print{:root,:root[data-theme="dark"]{color-scheme:light;--md-bg:#fff;--md-text:rgba(0,0,0,.8);--md-muted:rgba(0,0,0,.6);--md-fill:rgba(0,0,0,.04);--md-fill-strong:rgba(0,0,0,.06);--md-rule:rgba(0,0,0,.1);--md-rule-strong:rgba(0,0,0,.16);--md-link:hsl(210 100% 45%)}}body{background:var(--md-bg);color:var(--md-text);max-width:720px;margin:0 auto;padding:32px;display:flex;flex-direction:column;gap:10px;font:14px/1.55 -apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',sans-serif;overflow-wrap:break-word}body>:first-child{margin-top:0}h1,h2,h3,h4,h5,h6{margin:6px 0 0;line-height:1.25;font-weight:600;text-wrap:balance}h1{font-size:1.35em}h2{font-size:1.15em;color:var(--md-muted)}h3,h4,h5,h6{font-size:1em}p,ul,ol,blockquote,table,pre,hr{margin:0}strong{font-weight:600}a{color:var(--md-link);text-decoration:none}a:hover{text-decoration:underline}ul,ol{display:flex;flex-direction:column;gap:6px;padding-inline-start:22px}ul{list-style:disc}ol{list-style:decimal}li[dir]{text-align:start}:is(li,td,th)>*+:is(p,ul,ol,blockquote){margin-top:6px}blockquote{display:flex;flex-direction:column;gap:10px;border-inline-start:2px solid var(--md-rule);padding-inline-start:10px;color:var(--md-muted)}:not(pre)>code{background:var(--md-fill);padding:1px 3px;border-radius:4px;font:.92em 'SF Mono',ui-monospace,Menlo,Consolas,monospace}a>code{background:none;color:inherit}pre{background:var(--md-fill);padding:10px 12px;border-radius:6px;overflow-x:auto;font:12px/1.5 'SF Mono',ui-monospace,Menlo,Consolas,monospace;margin-block:4px}pre code{background:none;padding:0;font:inherit}[dir=rtl] pre{direction:ltr;text-align:left}[dir=rtl] code{direction:ltr;unicode-bidi:isolate}table{width:100%;border-collapse:separate;border-spacing:2px;font:inherit}th,td{padding:6px 8px;border-radius:3px;text-align:start;vertical-align:top}th{background:var(--md-fill-strong);font-weight:600}td{background:var(--md-fill)}:is(th,td) :not(pre)>code{background:transparent}hr{border:0;border-top:1px solid var(--md-rule-strong);margin-block:10px}img{max-width:100%;height:auto;border-radius:4px}</style>
+</head><body>
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html lang=&#34;en&#34;&gt;&lt;head&gt;
+&lt;meta charset=&#34;utf-8&#34;&gt;
+&lt;meta name=&#34;viewport&#34; content=&#34;width=device-width,initial-scale=1,viewport-fit=cover&#34;&gt;
+&lt;meta name=&#34;apple-mobile-web-app-capable&#34; content=&#34;yes&#34;&gt;
+&lt;meta name=&#34;mobile-web-app-capable&#34; content=&#34;yes&#34;&gt;
+&lt;meta name=&#34;apple-mobile-web-app-title&#34; content=&#34;Library&#34;&gt;
+&lt;meta name=&#34;theme-color&#34; content=&#34;#f6f5f2&#34;&gt;
+&lt;link rel=&#34;manifest&#34; href=&#34;manifest.webmanifest&#34;&gt;
+&lt;title&gt;Book Library&lt;/title&gt;
+&lt;style&gt;
+:root{--bg:#f6f5f2;--card:#fff;--ink:#1d2327;--mute:#6b747a;--line:#e3e1db;--acc:#2f6f6a;--accbg:#e4efed;--danger:#b3412f;color-scheme:light dark}
+@media(prefers-color-scheme:dark){:root{--bg:#141718;--card:#1c2022;--ink:#e8eaea;--mute:#8d979c;--line:#2a3033;--acc:#6fb3ab;--accbg:#223331;--danger:#e07a68}}
+*{box-sizing:border-box}[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 -apple-system,system-ui,&#34;Segoe UI&#34;,sans-serif;padding:env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left)}
+header{position:sticky;top:0;background:var(--bg);padding:10px 14px 8px;border-bottom:1px solid var(--line);z-index:5}
+.top{display:flex;align-items:center;gap:10px}.top h1{font:600 20px Georgia,&#34;Iowan Old Style&#34;,serif;margin:0}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:8px 10px;border-radius:8px}
+#menu{font-size:22px;padding:4px 8px}
+input,select,textarea{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%}
+#q{margin-top:8px}
+main{padding:6px 14px 110px;max-width:760px;margin:auto}
+h3{font:600 15px Georgia,serif;color:var(--acc);margin:22px 0 4px}
+ul{list-style:none;margin:0;padding:0}
+.row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.t{font-family:Georgia,serif;font-size:17px}.s,.m2{color:var(--mute);font-size:13px}.m{display:flex;flex-direction:column;align-items:flex-end;font-size:13px;color:var(--mute);white-space:nowrap}
+.pill{padding:1px 8px;border-radius:99px;background:var(--line)}.pill.read{background:var(--accbg);color:var(--acc)}.pill.in_progress{border:1px solid var(--acc);background:none;color:var(--acc)}
+.tabs{display:flex;gap:6px;margin:12px 0}.tabs button{border:1px solid var(--line)}.tabs .on{background:var(--accbg);color:var(--acc);border-color:var(--acc)}
+.yr{display:flex;align-items:center;justify-content:center;gap:16px;margin:8px 0}.yr button{font-size:22px}
+.empty{color:var(--mute);padding:24px 0;text-align:center}
+details{border-bottom:1px solid var(--line)}summary{font:600 19px Georgia,serif;padding:12px 0;cursor:pointer}
+.flt{margin:12px 0}
+#fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:50%;background:var(--acc);color:var(--bg);font-size:30px;padding:0;box-shadow:0 2px 10px #0004}
+.bg{position:fixed;inset:0;background:#0006;z-index:20}
+#side nav{position:fixed;z-index:21;top:0;bottom:0;left:0;width:78%;max-width:300px;background:var(--card);padding:calc(20px + env(safe-area-inset-top)) 14px 20px;display:flex;flex-direction:column;gap:4px}
+#side nav h1{font:600 22px Georgia,serif;margin:0 0 14px}#side nav button{text-align:start;font-size:17px}.sp{flex:1}
+#sheet .card{position:fixed;z-index:31;left:0;right:0;bottom:0;max-height:92vh;overflow:auto;background:var(--bg);border-radius:16px 16px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom));max-width:760px;margin:auto}
+#sheet .bg{z-index:30}
+label{display:block;font-size:13px;color:var(--mute);margin:10px 0}label&gt;*{margin-top:4px;color:var(--ink)}
+.bar{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}.pri{background:var(--acc);color:var(--bg)}.ghost{border:1px solid var(--line)}.danger{color:var(--danger);margin-inline-end:auto}
+.rr{display:flex;gap:6px;margin:6px 0}.x{color:var(--mute)}
+#npage{position:fixed;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+#npage .nb{display:flex;justify-content:space-between;padding:8px 10px;border-bottom:1px solid var(--line)}#npage .nb button{font-size:20px}
+#npage .nw{flex:1;display:flex;flex-direction:column;max-width:760px;width:100%;margin:auto;padding:14px 18px;min-height:0}
+#nt{border:0;background:none;font:600 24px Georgia,serif;padding:0;outline:0}#nm{color:var(--mute);font-size:12px;margin:2px 0 12px;min-height:1em}
+#nc{flex:1;border:0;background:none;resize:none;padding:0;font-size:17px;line-height:1.7;outline:0}
+.sn{font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row&gt;div:first-child{min-width:0}
+#toast{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:90px;background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:99px}
+#login{max-width:340px;margin:18vh auto;padding:0 20px}#login h1{font:600 26px Georgia,serif}#login input{margin:6px 0}#err{color:var(--danger);font-size:14px}
+&lt;/style&gt;&lt;/head&gt;&lt;body&gt;
+&lt;div id=&#34;login&#34; hidden&gt;&lt;h1&gt;Book Library&lt;/h1&gt;&lt;form id=&#34;lf&#34;&gt;&lt;input id=&#34;em&#34; type=&#34;email&#34; placeholder=&#34;Email&#34; autocomplete=&#34;username&#34; required&gt;&lt;input id=&#34;pw&#34; type=&#34;password&#34; placeholder=&#34;Password&#34; autocomplete=&#34;current-password&#34; required&gt;&lt;p id=&#34;err&#34;&gt;&lt;/p&gt;&lt;button class=&#34;pri&#34; style=&#34;width:100%&#34;&gt;Sign in&lt;/button&gt;&lt;/form&gt;&lt;/div&gt;
+&lt;div id=&#34;app&#34; hidden&gt;
+&lt;header&gt;&lt;div class=&#34;top&#34;&gt;&lt;button id=&#34;menu&#34; data-act=&#34;menu&#34; aria-label=&#34;Menu&#34;&gt;☰&lt;/button&gt;&lt;h1 id=&#34;title&#34;&gt;&lt;/h1&gt;&lt;/div&gt;&lt;input id=&#34;q&#34; type=&#34;search&#34; dir=&#34;auto&#34; placeholder=&#34;Search books, authors, notes&#34;&gt;&lt;/header&gt;
+&lt;main id=&#34;main&#34;&gt;&lt;/main&gt;
+&lt;button id=&#34;fab&#34; data-act=&#34;add&#34; aria-label=&#34;Add&#34;&gt;+&lt;/button&gt;
+&lt;div id=&#34;side&#34; hidden&gt;&lt;div class=&#34;bg&#34; data-act=&#34;menu&#34;&gt;&lt;/div&gt;&lt;nav&gt;&lt;h1&gt;Library&lt;/h1&gt;&lt;button data-act=&#34;nav&#34; data-v=&#34;lib&#34;&gt;Book Library&lt;/button&gt;&lt;button data-act=&#34;nav&#34; data-v=&#34;cats&#34;&gt;Book Categories&lt;/button&gt;&lt;button data-act=&#34;nav&#34; data-v=&#34;notes&#34;&gt;Notes&lt;/button&gt;&lt;button data-act=&#34;export&#34;&gt;Export backup&lt;/button&gt;&lt;button data-act=&#34;import&#34;&gt;Import backup&lt;/button&gt;&lt;input id=&#34;imp&#34; type=&#34;file&#34; accept=&#34;application/json,.json&#34; hidden&gt;&lt;div class=&#34;sp&#34;&gt;&lt;/div&gt;&lt;div id=&#34;stat&#34; class=&#34;s&#34;&gt;&lt;/div&gt;&lt;div class=&#34;s&#34;&gt;Version 3&lt;/div&gt;&lt;button class=&#34;ghost&#34; data-act=&#34;signout&#34;&gt;Sign out&lt;/button&gt;&lt;/nav&gt;&lt;/div&gt;
+&lt;div id=&#34;npage&#34; hidden&gt;&lt;/div&gt;&lt;div id=&#34;sheet&#34; hidden&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div id=&#34;toast&#34; hidden&gt;&lt;/div&gt;
+&lt;script src=&#34;https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js&#34;&gt;&lt;/script&gt;
+&lt;script&gt;
+const sb=supabase.createClient(&#39;https://guijyqkagbdascdxsoym.supabase.co&#39;,&#39;sb_publishable_51mTib40-xLq16tjLFUSFg_IVj0RRGn&#39;);
+const T=[&#39;categories&#39;,&#39;books&#39;,&#39;reading_records&#39;,&#39;notes&#39;],SL={not_started:&#39;Not Started&#39;,in_progress:&#39;In Progress&#39;,read:&#39;Read&#39;};
+const $=s=&gt;document.querySelector(s),uid=()=&gt;crypto.randomUUID(),now=()=&gt;new Date().toISOString();
+const esc=s=&gt;String(s??&#39;&#39;).replace(/[&amp;&lt;&gt;&#34;&#39;]/g,c=&gt;({&#39;&amp;&#39;:&#39;&amp;amp;&#39;,&#39;&lt;&#39;:&#39;&amp;lt;&#39;,&#39;&gt;&#39;:&#39;&amp;gt;&#39;,&#39;&#34;&#39;:&#39;&amp;quot;&#39;,&#34;&#39;&#34;:&#39;&amp;#39;&#39;}[c]));
+let S={},user=null,sy,syncing=false,V={view:&#39;lib&#39;,lt:&#39;plan&#39;,ct:&#39;cat&#39;,nf:&#39;all&#39;,year:new Date().getFullYear(),q:&#39;&#39;};
+const idb=new Promise((ok,no)=&gt;{const r=indexedDB.open(&#39;booklib&#39;,1);r.onupgradeneeded=()=&gt;[...T,&#39;meta&#39;].forEach(t=&gt;r.result.createObjectStore(t,{keyPath:t==&#39;meta&#39;?&#39;k&#39;:&#39;id&#39;}));r.onsuccess=()=&gt;ok(r.result);r.onerror=()=&gt;no(r.error)});
+const tx=async(st,mode,fn)=&gt;{const d=await idb;return new Promise((ok,no)=&gt;{const t=d.transaction(st,mode),q=fn(t.objectStore(st));t.oncomplete=()=&gt;ok(q&amp;&amp;q.result);t.onerror=()=&gt;no(t.error)})};
+const putRow=(t,r)=&gt;tx(t,&#39;readwrite&#39;,s=&gt;s.put(r));
+const live=t=&gt;S[t].filter(r=&gt;!r.deleted_at),bookById=id=&gt;S.books.find(b=&gt;b.id==id),catName=id=&gt;S.categories.find(c=&gt;c.id==id)?.name||&#39;Uncategorized&#39;;
+const toast=m=&gt;{const e=$(&#39;#toast&#39;);e.textContent=m;e.hidden=false;clearTimeout(e.t);e.t=setTimeout(()=&gt;e.hidden=true,2600)};
+const setStat=m=&gt;$(&#39;#stat&#39;).textContent=m;
+async function load(){for(const t of T)S[t]=await tx(t,&#39;readonly&#39;,s=&gt;s.getAll())}
+function save(t,row){row.updated_at=now();row._dirty=1;S[t]=S[t].filter(x=&gt;x.id!=row.id).concat(row);putRow(t,row);render();clearTimeout(sy);sy=setTimeout(sync,400)}
+async function sync(){
+ if(syncing||!user)return;
+ if(!navigator.onLine){setStat(&#39;Offline. Changes are saved on this device.&#39;);return}
+ syncing=true;setStat(&#39;Syncing…&#39;);
+ try{
+  for(const t of T){const dirty=S[t].filter(r=&gt;r._dirty);if(!dirty.length)continue;
+   const {error}=await sb.from(t).upsert(dirty.map(({_dirty,...r})=&gt;({...r,user_id:user.id})));if(error)throw error;
+   for(const r of dirty)if(S[t].find(x=&gt;x.id==r.id)===r){delete r._dirty;await putRow(t,r)}}
+  const cur=(await tx(&#39;meta&#39;,&#39;readonly&#39;,s=&gt;s.get(&#39;cur&#39;)))?.v||{};
+  for(const t of T){let since=cur[t]||&#39;1970-01-01T00:00:00Z&#39;;
+   for(;;){const {data,error}=await sb.from(t).select(&#39;*&#39;).gt(&#39;updated_at&#39;,since).order(&#39;updated_at&#39;).limit(1000);if(error)throw error;if(!data.length)break;
+    for(const r of data){const l=S[t].find(x=&gt;x.id==r.id);if(l&amp;&amp;l._dirty)continue;S[t]=S[t].filter(x=&gt;x.id!=r.id).concat(r);await putRow(t,r)}
+    since=data[data.length-1].updated_at;if(data.length&lt;1000)break}
+   cur[t]=since}
+  await tx(&#39;meta&#39;,&#39;readwrite&#39;,s=&gt;s.put({k:&#39;cur&#39;,v:cur}));
+  setStat(&#39;Synced &#39;+new Date().toLocaleTimeString([],{hour:&#39;2-digit&#39;,minute:&#39;2-digit&#39;}));render();
+ }catch(e){setStat(&#39;Sync failed. Will retry. &#39;+(e.message||&#39;&#39;))}
+ syncing=false}
+const recs=()=&gt;live(&#39;reading_records&#39;).map(r=&gt;({r,b:bookById(r.book_id)})).filter(i=&gt;i.b&amp;&amp;!i.b.deleted_at);
+const bestRec=id=&gt;live(&#39;reading_records&#39;).filter(r=&gt;r.book_id==id).sort((a,b)=&gt;(b.year||0)-(a.year||0))[0];
+const bookRow=(b,r)=&gt;`&lt;li class=&#34;row&#34; data-act=&#34;book&#34; data-id=&#34;${b.id}&#34;&gt;&lt;div&gt;&lt;div class=&#34;t&#34; dir=&#34;auto&#34;&gt;${esc(b.title)}&lt;/div&gt;${b.author?`&lt;div class=&#34;s&#34; dir=&#34;auto&#34;&gt;${esc(b.author)}&lt;/div&gt;`:&#39;&#39;}&lt;/div&gt;&lt;div class=&#34;m&#34;&gt;${r?`&lt;span class=&#34;pill ${r.status}&#34;&gt;${SL[r.status]}&lt;/span&gt;`:&#39;&#39;}${b.total_pages?`&lt;span&gt;${b.total_pages} pages&lt;/span&gt;`:&#39;&#39;}&lt;/div&gt;&lt;/li&gt;`;
+function groups(items){const m={};items.forEach(i=&gt;(m[catName(i.b.category_id)]??=[]).push(i));
+ return Object.keys(m).sort().map(k=&gt;`&lt;h3&gt;${esc(k)}&lt;/h3&gt;&lt;ul&gt;${m[k].sort((a,b)=&gt;a.b.title.localeCompare(b.b.title)).map(i=&gt;bookRow(i.b,i.r)).join(&#39;&#39;)}&lt;/ul&gt;`).join(&#39;&#39;)||&#39;&lt;p class=&#34;empty&#34;&gt;No books here yet. Tap + to add one.&lt;/p&gt;&#39;}
+const tabs=(a,cur,act)=&gt;`&lt;div class=&#34;tabs&#34;&gt;${a.map(([k,l])=&gt;`&lt;button data-act=&#34;${act}&#34; data-v=&#34;${k}&#34; class=&#34;${k==cur?&#39;on&#39;:&#39;&#39;}&#34;&gt;${l}&lt;/button&gt;`).join(&#39;&#39;)}&lt;/div&gt;`;
+function vLib(){const R=recs(),ip=R.filter(i=&gt;i.r.status==&#39;in_progress&#39;),h=(ip.length?`&lt;h3&gt;Continue&lt;/h3&gt;&lt;ul&gt;${ip.map(i=&gt;bookRow(i.b,i.r)).join(&#39;&#39;)}&lt;/ul&gt;`:&#39;&#39;)+tabs([[&#39;plan&#39;,&#39;Reading plan&#39;],[&#39;want&#39;,&#39;Want to read&#39;]],V.lt,&#39;lt&#39;);
+ if(V.lt==&#39;want&#39;)return h+groups(R.filter(i=&gt;i.r.year==null));
+ return h+`&lt;div class=&#34;yr&#34;&gt;&lt;button data-act=&#34;yr&#34; data-d=&#34;-1&#34; aria-label=&#34;Previous year&#34;&gt;‹&lt;/button&gt;&lt;b&gt;${V.year}&lt;/b&gt;&lt;button data-act=&#34;yr&#34; data-d=&#34;1&#34; aria-label=&#34;Next year&#34;&gt;›&lt;/button&gt;&lt;/div&gt;`+groups(R.filter(i=&gt;i.r.year==V.year))}
+function vCats(){const h=tabs([[&#39;cat&#39;,&#39;By category&#39;],[&#39;year&#39;,&#39;By year&#39;]],V.ct,&#39;ct&#39;)+&#39;&lt;button class=&#34;ghost&#34; data-act=&#34;cats&#34;&gt;Edit categories&lt;/button&gt;&#39;;
+ if(V.ct==&#39;cat&#39;)return h+groups(live(&#39;books&#39;).map(b=&gt;({b,r:bestRec(b.id)})));
+ const R=recs(),ys=[...new Set(R.map(i=&gt;i.r.year))].sort((a,b)=&gt;(b||0)-(a||0));
+ return h+(ys.map((y,i)=&gt;`&lt;details ${i==0?&#39;open&#39;:&#39;&#39;}&gt;&lt;summary&gt;${y??&#39;Want to read&#39;}&lt;/summary&gt;${groups(R.filter(x=&gt;x.r.year==y))}&lt;/details&gt;`).join(&#39;&#39;)||&#39;&lt;p class=&#34;empty&#34;&gt;No reading records yet.&lt;/p&gt;&#39;)}
+const noteRow=n=&gt;{const bk=n.book_id?bookById(n.book_id)?.title:n.book_text,meta=[new Date(n.created_at).toLocaleDateString(),n.category_id&amp;&amp;catName(n.category_id),bk&amp;&amp;bk+(n.page?&#39; p. &#39;+n.page:&#39;&#39;)].filter(Boolean).join(&#39; / &#39;);
+ return `&lt;li class=&#34;row&#34; data-act=&#34;note&#34; data-id=&#34;${n.id}&#34;&gt;&lt;div&gt;&lt;div class=&#34;t&#34; dir=&#34;auto&#34;&gt;${esc(n.title||&#39;Untitled&#39;)}&lt;/div&gt;&lt;div class=&#34;sn&#34; dir=&#34;auto&#34;&gt;${esc(n.content.split(&#39;\n&#39;).find(l=&gt;l.trim())||&#39;&#39;)}&lt;/div&gt;&lt;div class=&#34;m2&#34; dir=&#34;auto&#34;&gt;${esc(meta)}&lt;/div&gt;&lt;/div&gt;&lt;/li&gt;`};
+function vNotes(){const f=V.nf,N=live(&#39;notes&#39;).filter(n=&gt;f==&#39;all&#39;||(f[0]==&#39;c&#39;?n.category_id==f.slice(2):n.book_id==f.slice(2))).sort((a,b)=&gt;b.created_at.localeCompare(a.created_at));
+ const op=(v,l)=&gt;`&lt;option value=&#34;${v}&#34; ${f==v?&#39;selected&#39;:&#39;&#39;}&gt;${esc(l)}&lt;/option&gt;`,bks=live(&#39;books&#39;).filter(b=&gt;live(&#39;notes&#39;).some(n=&gt;n.book_id==b.id));
+ return `&lt;select class=&#34;flt&#34; data-act=&#34;nf&#34;&gt;&lt;option value=&#34;all&#34;&gt;All notes&lt;/option&gt;&lt;optgroup label=&#34;Category&#34;&gt;${live(&#39;categories&#39;).map(c=&gt;op(&#39;c:&#39;+c.id,c.name)).join(&#39;&#39;)}&lt;/optgroup&gt;&lt;optgroup label=&#34;Book&#34;&gt;${bks.map(b=&gt;op(&#39;b:&#39;+b.id,b.title)).join(&#39;&#39;)}&lt;/optgroup&gt;&lt;/select&gt;&lt;ul&gt;${N.map(noteRow).join(&#39;&#39;)||&#39;&lt;li class=&#34;empty&#34;&gt;No notes yet. Tap + to add one.&lt;/li&gt;&#39;}&lt;/ul&gt;`}
+function search(q){const B=live(&#39;books&#39;).filter(b=&gt;(b.title+&#39; &#39;+(b.author||&#39;&#39;)).toLowerCase().includes(q)).map(b=&gt;bookRow(b,bestRec(b.id))),N=live(&#39;notes&#39;).filter(n=&gt;((n.title||&#39;&#39;)+&#39; &#39;+n.content).toLowerCase().includes(q)).map(noteRow);
+ return `&lt;h3&gt;Books&lt;/h3&gt;&lt;ul&gt;${B.join(&#39;&#39;)||&#39;&lt;li class=&#34;empty&#34;&gt;No books found&lt;/li&gt;&#39;}&lt;/ul&gt;&lt;h3&gt;Notes&lt;/h3&gt;&lt;ul&gt;${N.join(&#39;&#39;)||&#39;&lt;li class=&#34;empty&#34;&gt;No notes found&lt;/li&gt;&#39;}&lt;/ul&gt;`}
+function render(){const q=V.q.trim().toLowerCase();$(&#39;#title&#39;).textContent={lib:&#39;Book Library&#39;,cats:&#39;Book Categories&#39;,notes:&#39;Notes&#39;}[V.view];
+ $(&#39;#main&#39;).innerHTML=q?search(q):{lib:vLib,cats:vCats,notes:vNotes}[V.view]()}
+const sheet=h=&gt;{$(&#39;#sheet&#39;).innerHTML=`&lt;div class=&#34;bg&#34; data-act=&#34;close&#34;&gt;&lt;/div&gt;&lt;div class=&#34;card&#34;&gt;${h}&lt;/div&gt;`;$(&#39;#sheet&#39;).hidden=false};
+const closeSheet=()=&gt;{$(&#39;#sheet&#39;).hidden=true;$(&#39;#sheet&#39;).innerHTML=&#39;&#39;};
+const catOpts=sel=&gt;`&lt;option value=&#34;&#34;&gt;None&lt;/option&gt;${live(&#39;categories&#39;).sort((a,b)=&gt;a.name.localeCompare(b.name)).map(c=&gt;`&lt;option value=&#34;${c.id}&#34; ${c.id==sel?&#39;selected&#39;:&#39;&#39;}&gt;${esc(c.name)}&lt;/option&gt;`).join(&#39;&#39;)}&lt;option value=&#34;__new&#34;&gt;+ New category…&lt;/option&gt;`;
+const statusOpts=sel=&gt;Object.entries(SL).map(([k,v])=&gt;`&lt;option value=&#34;${k}&#34; ${k==sel?&#39;selected&#39;:&#39;&#39;}&gt;${v}&lt;/option&gt;`).join(&#39;&#39;);
+const recBlock=id=&gt;live(&#39;reading_records&#39;).filter(r=&gt;r.book_id==id).sort((a,b)=&gt;(b.year||0)-(a.year||0)).map(r=&gt;`&lt;div class=&#34;rr&#34;&gt;&lt;input type=&#34;number&#34; inputmode=&#34;numeric&#34; data-rec=&#34;${r.id}&#34; data-f=&#34;year&#34; placeholder=&#34;No year&#34; value=&#34;${r.year??&#39;&#39;}&#34;&gt;&lt;select data-rec=&#34;${r.id}&#34; data-f=&#34;status&#34;&gt;${statusOpts(r.status)}&lt;/select&gt;&lt;button class=&#34;x&#34; data-act=&#34;rec-del&#34; data-id=&#34;${r.id}&#34; aria-label=&#34;Remove&#34;&gt;✕&lt;/button&gt;&lt;/div&gt;`).join(&#39;&#39;)||&#39;&lt;p class=&#34;s&#34;&gt;No reading records.&lt;/p&gt;&#39;;
+const bar=(id,del,saveAct)=&gt;`&lt;div class=&#34;bar&#34;&gt;${id?`&lt;button class=&#34;danger&#34; data-act=&#34;${del}&#34; data-id=&#34;${id}&#34;&gt;Delete&lt;/button&gt;`:&#39;&#39;}&lt;button class=&#34;ghost&#34; data-act=&#34;close&#34;&gt;Cancel&lt;/button&gt;&lt;button class=&#34;pri&#34; data-act=&#34;${saveAct}&#34; data-id=&#34;${id||&#39;&#39;}&#34;&gt;Save&lt;/button&gt;&lt;/div&gt;`;
+function bookForm(id){const b=id&amp;&amp;bookById(id);
+ sheet(`&lt;h2&gt;${b?&#39;Edit book&#39;:&#39;Add book&#39;}&lt;/h2&gt;&lt;label&gt;Book title&lt;input id=&#34;f_t&#34; dir=&#34;auto&#34; value=&#34;${esc(b?.title)}&#34;&gt;&lt;/label&gt;&lt;label&gt;Author (optional)&lt;input id=&#34;f_a&#34; dir=&#34;auto&#34; value=&#34;${esc(b?.author)}&#34;&gt;&lt;/label&gt;&lt;label&gt;Category&lt;select id=&#34;f_c&#34; data-cat&gt;${catOpts(b?.category_id)}&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Total pages (optional)&lt;input id=&#34;f_p&#34; type=&#34;number&#34; inputmode=&#34;numeric&#34; min=&#34;1&#34; value=&#34;${b?.total_pages||&#39;&#39;}&#34;&gt;&lt;/label&gt;`+
+ (b?`&lt;h3&gt;Reading history&lt;/h3&gt;&lt;div id=&#34;recs&#34;&gt;${recBlock(id)}&lt;/div&gt;&lt;button class=&#34;ghost&#34; data-act=&#34;rec-add&#34; data-id=&#34;${id}&#34;&gt;Add reading year&lt;/button&gt;&lt;p class=&#34;s&#34;&gt;${live(&#39;notes&#39;).filter(n=&gt;n.book_id==id).length} linked notes&lt;/p&gt;`
+ :`&lt;label&gt;Reading status&lt;select id=&#34;f_s&#34;&gt;${statusOpts(&#39;not_started&#39;)}&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Reading year (empty = Want to read)&lt;input id=&#34;f_y&#34; type=&#34;number&#34; inputmode=&#34;numeric&#34; value=&#34;${V.view==&#39;lib&#39;&amp;&amp;V.lt==&#39;want&#39;?&#39;&#39;:V.year}&#34;&gt;&lt;/label&gt;`)+bar(id,&#39;del-book&#39;,&#39;save-book&#39;))}
+function noteForm(id){const n=id&amp;&amp;S.notes.find(x=&gt;x.id==id);
+ sheet(`&lt;h2&gt;${n?&#39;Edit note&#39;:&#39;Add note&#39;}&lt;/h2&gt;&lt;label&gt;Title (optional)&lt;input id=&#34;n_t&#34; dir=&#34;auto&#34; value=&#34;${esc(n?.title)}&#34;&gt;&lt;/label&gt;&lt;label&gt;Content&lt;textarea id=&#34;n_c&#34; dir=&#34;auto&#34; rows=&#34;9&#34;&gt;${esc(n?.content)}&lt;/textarea&gt;&lt;/label&gt;&lt;label&gt;Category&lt;select id=&#34;n_cat&#34; data-cat&gt;${catOpts(n?.category_id)}&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Book&lt;select id=&#34;n_b&#34;&gt;&lt;option value=&#34;&#34;&gt;No book&lt;/option&gt;${live(&#39;books&#39;).sort((a,b)=&gt;a.title.localeCompare(b.title)).map(b=&gt;`&lt;option value=&#34;${b.id}&#34; ${b.id==n?.book_id?&#39;selected&#39;:&#39;&#39;}&gt;${esc(b.title)}&lt;/option&gt;`).join(&#39;&#39;)}&lt;/select&gt;&lt;input id=&#34;n_bt&#34; dir=&#34;auto&#34; placeholder=&#34;or type a book name&#34; value=&#34;${esc(n?.book_text)}&#34;&gt;&lt;/label&gt;&lt;label&gt;Page (optional)&lt;input id=&#34;n_pg&#34; dir=&#34;auto&#34; value=&#34;${esc(n?.page)}&#34;&gt;&lt;/label&gt;`+bar(id,&#39;del-note&#39;,&#39;save-note&#39;))}
+document.addEventListener(&#39;click&#39;,e=&gt;{const el=e.target.closest(&#39;[data-act]&#39;);if(!el)return;const a=el.dataset.act,id=el.dataset.id,v=el.dataset.v;
+ if(a==&#39;menu&#39;)$(&#39;#side&#39;).hidden=!$(&#39;#side&#39;).hidden;
+ else if(a==&#39;nav&#39;){V.view=v;V.q=&#39;&#39;;$(&#39;#q&#39;).value=&#39;&#39;;$(&#39;#side&#39;).hidden=true;render()}
+ else if(a==&#39;lt&#39;){V.lt=v;render()}else if(a==&#39;ct&#39;){V.ct=v;render()}
+ else if(a==&#39;yr&#39;){V.year+=+el.dataset.d;render()}
+ else if(a==&#39;add&#39;)V.view==&#39;notes&#39;?noteEditor():bookForm();
+ else if(a==&#39;book&#39;)bookForm(id);else if(a==&#39;note&#39;)noteEditor(id);else if(a==&#39;close&#39;)closeSheet();
+ else if(a==&#39;save-book&#39;){const t=$(&#39;#f_t&#39;).value.trim();if(!t)return toast(&#39;Title is required&#39;);
+  const base=id?bookById(id):{id:uid(),user_id:user.id,created_at:now()};
+  save(&#39;books&#39;,{...base,title:t,author:$(&#39;#f_a&#39;).value.trim()||null,category_id:$(&#39;#f_c&#39;).value||null,total_pages:parseInt($(&#39;#f_p&#39;).value)||null});
+  if(!id)save(&#39;reading_records&#39;,{id:uid(),user_id:user.id,book_id:base.id,year:parseInt($(&#39;#f_y&#39;).value)||null,status:$(&#39;#f_s&#39;).value,created_at:now()});closeSheet()}
+ else if(a==&#39;del-book&#39;){const n=live(&#39;notes&#39;).filter(x=&gt;x.book_id==id).length;
+  if(!confirm(n?`This book has ${n} linked note(s). The notes will be kept. Delete the book?`:&#39;Delete this book?&#39;))return;
+  live(&#39;reading_records&#39;).filter(r=&gt;r.book_id==id).forEach(r=&gt;save(&#39;reading_records&#39;,{...r,deleted_at:now()}));save(&#39;books&#39;,{...bookById(id),deleted_at:now()});closeSheet()}
+ else if(a==&#39;rec-add&#39;){const y=new Date().getFullYear();if(live(&#39;reading_records&#39;).some(r=&gt;r.book_id==id&amp;&amp;r.year==y))return toast(&#39;This book already has a record for &#39;+y+&#39;. Change its year first.&#39;);
+  save(&#39;reading_records&#39;,{id:uid(),user_id:user.id,book_id:id,year:y,status:&#39;not_started&#39;,created_at:now()});$(&#39;#recs&#39;).innerHTML=recBlock(id)}
+ else if(a==&#39;rec-del&#39;){const r=S.reading_records.find(x=&gt;x.id==id);save(&#39;reading_records&#39;,{...r,deleted_at:now()});$(&#39;#recs&#39;).innerHTML=recBlock(r.book_id)}
+ else if(a==&#39;save-note&#39;){const t=$(&#39;#n_t&#39;).value.trim(),c=$(&#39;#n_c&#39;).value;if(!t&amp;&amp;!c.trim())return toast(&#39;Write a title or some content&#39;);
+  const base=id?S.notes.find(x=&gt;x.id==id):{id:uid(),user_id:user.id,created_at:now()},bk=$(&#39;#n_b&#39;).value||null;
+  save(&#39;notes&#39;,{...base,title:t||null,content:c,category_id:$(&#39;#n_cat&#39;).value||null,book_id:bk,book_text:bk?null:$(&#39;#n_bt&#39;).value.trim()||null,page:$(&#39;#n_pg&#39;).value.trim()||null});closeSheet()}
+ else if(a==&#39;del-note&#39;){if(!confirm(&#39;Delete this note?&#39;))return;save(&#39;notes&#39;,{...S.notes.find(x=&gt;x.id==id),deleted_at:now()});closeSheet()}
+ else if(a==&#39;signout&#39;)signOut();else if(a==&#39;export&#39;)backup();else if(a==&#39;cats&#39;)catsForm();else if(a==&#39;n-back&#39;)noteBack();else if(a==&#39;n-menu&#39;)noteMenu();else if(a==&#39;n-del&#39;)noteDel();
+ else if(a==&#39;n-ok&#39;){const bk=$(&#39;#n_b&#39;).value||null;closeSheet();noteSave({category_id:$(&#39;#n_cat&#39;).value||null,book_id:bk,book_text:bk?null:$(&#39;#n_bt&#39;).value.trim()||null,page:$(&#39;#n_pg&#39;).value.trim()||null})}else if(a==&#39;import&#39;)$(&#39;#imp&#39;).click()});
+document.addEventListener(&#39;change&#39;,async e=&gt;{const s=e.target;
+ if(s.dataset.act==&#39;nf&#39;){V.nf=s.value;render()}
+ else if(s.dataset.cat!==undefined&amp;&amp;s.value==&#39;__new&#39;){const n=(prompt(&#39;New category name&#39;)||&#39;&#39;).trim();if(!n){s.value=&#39;&#39;;return}
+  let c=live(&#39;categories&#39;).find(c=&gt;c.name.toLowerCase()==n.toLowerCase());if(!c){c={id:uid(),user_id:user.id,name:n,created_at:now()};save(&#39;categories&#39;,c)}s.innerHTML=catOpts(c.id)}
+ else if(s.dataset.ren){const c=S.categories.find(x=&gt;x.id==s.dataset.ren),n=s.value.trim();if(!n||live(&#39;categories&#39;).some(x=&gt;x.id!=c.id&amp;&amp;x.name.toLowerCase()==n.toLowerCase())){toast(n?&#39;That category already exists&#39;:&#39;Name cannot be empty&#39;);s.value=c.name;return}save(&#39;categories&#39;,{...c,name:n});toast(&#39;Renamed&#39;)}
+ else if(s.dataset.rec){const r=S.reading_records.find(x=&gt;x.id==s.dataset.rec);let v=s.value;
+  if(s.dataset.f==&#39;year&#39;){v=parseInt(v)||null;if(live(&#39;reading_records&#39;).some(x=&gt;x.id!=r.id&amp;&amp;x.book_id==r.book_id&amp;&amp;x.year==v)){toast(&#39;This book already has a record for that year&#39;);$(&#39;#recs&#39;).innerHTML=recBlock(r.book_id);return}}
+  save(&#39;reading_records&#39;,{...r,[s.dataset.f]:v})}});
+$(&#39;#q&#39;).addEventListener(&#39;input&#39;,e=&gt;{V.q=e.target.value;render()});
+function catsForm(){sheet(`&lt;h2&gt;Edit categories&lt;/h2&gt;${live(&#39;categories&#39;).sort((a,b)=&gt;a.name.localeCompare(b.name)).map(c=&gt;`&lt;label&gt;${live(&#39;books&#39;).filter(b=&gt;b.category_id==c.id).length} books&lt;input dir=&#34;auto&#34; data-ren=&#34;${c.id}&#34; value=&#34;${esc(c.name)}&#34;&gt;&lt;/label&gt;`).join(&#39;&#39;)||&#39;&lt;p class=&#34;s&#34;&gt;No categories yet.&lt;/p&gt;&#39;}&lt;div class=&#34;bar&#34;&gt;&lt;button class=&#34;pri&#34; data-act=&#34;close&#34;&gt;Done&lt;/button&gt;&lt;/div&gt;`)}
+let NID=null,nt2;
+const metaOf=n=&gt;{const bk=n.book_id?bookById(n.book_id)?.title:n.book_text;return [n.category_id&amp;&amp;catName(n.category_id),bk&amp;&amp;bk+(n.page?&#39; p. &#39;+n.page:&#39;&#39;)].filter(Boolean).join(&#39; / &#39;)};
+function noteEditor(id){NID=id||null;const n=id&amp;&amp;S.notes.find(x=&gt;x.id==id);
+ $(&#39;#npage&#39;).innerHTML=`&lt;div class=&#34;nb&#34;&gt;&lt;button data-act=&#34;n-back&#34;&gt;‹ Back&lt;/button&gt;&lt;button data-act=&#34;n-menu&#34; aria-label=&#34;Note settings&#34;&gt;⋯&lt;/button&gt;&lt;/div&gt;&lt;div class=&#34;nw&#34;&gt;&lt;input id=&#34;nt&#34; dir=&#34;auto&#34; placeholder=&#34;Title&#34; value=&#34;${esc(n?.title)}&#34;&gt;&lt;div id=&#34;nm&#34; dir=&#34;auto&#34;&gt;${n?esc(metaOf(n)):&#39;&#39;}&lt;/div&gt;&lt;textarea id=&#34;nc&#34; dir=&#34;auto&#34; placeholder=&#34;Write here…&#34;&gt;${esc(n?.content)}&lt;/textarea&gt;&lt;/div&gt;`;
+ $(&#39;#npage&#39;).hidden=false;if(!n)$(&#39;#nc&#39;).focus()}
+function noteSave(extra){clearTimeout(nt2);if($(&#39;#npage&#39;).hidden)return;const t=$(&#39;#nt&#39;).value.trim(),c=$(&#39;#nc&#39;).value;let n=NID&amp;&amp;S.notes.find(x=&gt;x.id==NID);
+ if(!n){if(!t&amp;&amp;!c.trim()&amp;&amp;!extra)return;n={id:uid(),user_id:user.id,created_at:now(),content:&#39;&#39;};NID=n.id}
+ if(n.title==(t||null)&amp;&amp;n.content==c&amp;&amp;!extra)return;
+ const row={...n,title:t||null,content:c,...extra};save(&#39;notes&#39;,row);$(&#39;#nm&#39;).textContent=metaOf(row)}
+function noteClose(){$(&#39;#npage&#39;).hidden=true;$(&#39;#npage&#39;).innerHTML=&#39;&#39;;NID=null}
+function noteBack(){noteSave();noteClose()}
+function noteDel(){if(!confirm(&#39;Delete this note?&#39;))return;clearTimeout(nt2);const n=S.notes.find(x=&gt;x.id==NID);if(n)save(&#39;notes&#39;,{...n,deleted_at:now()});closeSheet();noteClose()}
+function noteMenu(){noteSave();const n=(NID&amp;&amp;S.notes.find(x=&gt;x.id==NID))||{};
+ sheet(`&lt;h2&gt;Note settings&lt;/h2&gt;&lt;label&gt;Category&lt;select id=&#34;n_cat&#34; data-cat&gt;${catOpts(n.category_id)}&lt;/select&gt;&lt;/label&gt;&lt;label&gt;Quoted from book&lt;select id=&#34;n_b&#34;&gt;&lt;option value=&#34;&#34;&gt;No book&lt;/option&gt;${live(&#39;books&#39;).sort((a,b)=&gt;a.title.localeCompare(b.title)).map(b=&gt;`&lt;option value=&#34;${b.id}&#34; ${b.id==n.book_id?&#39;selected&#39;:&#39;&#39;}&gt;${esc(b.title)}&lt;/option&gt;`).join(&#39;&#39;)}&lt;/select&gt;&lt;input id=&#34;n_bt&#34; dir=&#34;auto&#34; placeholder=&#34;or type a book name&#34; value=&#34;${esc(n.book_text)}&#34;&gt;&lt;/label&gt;&lt;label&gt;Page (optional)&lt;input id=&#34;n_pg&#34; dir=&#34;auto&#34; value=&#34;${esc(n.page)}&#34;&gt;&lt;/label&gt;&lt;div class=&#34;bar&#34;&gt;${n.id?&#39;&lt;button class=&#34;danger&#34; data-act=&#34;n-del&#34;&gt;Delete note&lt;/button&gt;&#39;:&#39;&#39;}&lt;button class=&#34;pri&#34; data-act=&#34;n-ok&#34;&gt;Done&lt;/button&gt;&lt;/div&gt;`)}
+document.addEventListener(&#39;input&#39;,e=&gt;{if(e.target.id==&#39;nt&#39;||e.target.id==&#39;nc&#39;){clearTimeout(nt2);nt2=setTimeout(noteSave,600)}});
+addEventListener(&#39;pagehide&#39;,()=&gt;noteSave());document.addEventListener(&#39;visibilitychange&#39;,()=&gt;{if(document.hidden)noteSave()});
+function backup(){const o={format:&#39;booklib-backup&#39;,version:1,exported_at:now()};T.forEach(t=&gt;o[t]=S[t].map(({_dirty,...r})=&gt;r));
+ const a=document.createElement(&#39;a&#39;);a.href=URL.createObjectURL(new Blob([JSON.stringify(o)],{type:&#39;application/json&#39;}));a.download=&#39;booklib-backup-&#39;+now().slice(0,10)+&#39;.json&#39;;a.click();toast(&#39;Backup exported&#39;)}
+async function restore(f){let o;try{o=JSON.parse(await f.text())}catch(e){return toast(&#39;Not a valid backup file&#39;)}
+ if(o?.format!=&#39;booklib-backup&#39;||o.version!=1||T.some(t=&gt;!Array.isArray(o[t])))return toast(&#39;Not a valid backup file&#39;);
+ const ids=new Set(T.flatMap(t=&gt;[...o[t],...S[t]].map(r=&gt;r.id)));
+ const bad=T.some(t=&gt;o[t].some(r=&gt;typeof r.id!=&#39;string&#39;||(t==&#39;books&#39;&amp;&amp;(typeof r.title!=&#39;string&#39;||(r.category_id&amp;&amp;!ids.has(r.category_id))))||(t==&#39;reading_records&#39;&amp;&amp;!ids.has(r.book_id))||(t==&#39;notes&#39;&amp;&amp;((r.category_id&amp;&amp;!ids.has(r.category_id))||(r.book_id&amp;&amp;!ids.has(r.book_id))))));
+ if(bad)return toast(&#39;Backup is damaged. Nothing was imported.&#39;);
+ const add=T.map(t=&gt;o[t].filter(r=&gt;!S[t].some(x=&gt;x.id==r.id))),n=add.reduce((a,x)=&gt;a+x.length,0),total=T.reduce((a,t)=&gt;a+o[t].length,0);
+ if(!n)return toast(&#39;Nothing new: everything in this backup is already here&#39;);
+ if(!confirm(`This backup has ${total} items. ${n} are new and will be added. ${total-n} already exist and will be left untouched. Continue?`))return;
+ for(const [i,t] of T.entries())for(const r of add[i]){const row={...r,user_id:user.id,_dirty:1};S[t].push(row);await putRow(t,row)}
+ render();sync();toast(n+&#39; items restored&#39;)}
+$(&#39;#imp&#39;).addEventListener(&#39;change&#39;,e=&gt;{const f=e.target.files[0];e.target.value=&#39;&#39;;$(&#39;#side&#39;).hidden=true;if(f)restore(f)});
+async function signOut(){const pending=T.some(t=&gt;S[t].some(r=&gt;r._dirty));
+ if(pending&amp;&amp;!confirm(&#39;Some changes are not synced yet. Signing out will lose them. Sign out anyway?&#39;))return;
+ await sb.auth.signOut();for(const t of [...T,&#39;meta&#39;])await tx(t,&#39;readwrite&#39;,s=&gt;s.clear());location.reload()}
+$(&#39;#lf&#39;).addEventListener(&#39;submit&#39;,async e=&gt;{e.preventDefault();$(&#39;#err&#39;).textContent=&#39;&#39;;
+ const {data,error}=await sb.auth.signInWithPassword({email:$(&#39;#em&#39;).value.trim(),password:$(&#39;#pw&#39;).value});
+ if(error){$(&#39;#err&#39;).textContent=navigator.onLine?&#39;Wrong email or password.&#39;:&#39;You are offline. Sign in needs internet the first time.&#39;;return}
+ user=data.user;start()});
+function start(){$(&#39;#login&#39;).hidden=true;$(&#39;#app&#39;).hidden=false;render();sync();addEventListener(&#39;online&#39;,sync);addEventListener(&#39;focus&#39;,sync);setInterval(sync,60000)}
+(async()=&gt;{await load();let s=null;try{s=(await sb.auth.getSession()).data.session}catch(e){}
+ if(s){user=s.user;start()}else $(&#39;#login&#39;).hidden=false;
+ if(&#39;serviceWorker&#39; in navigator)navigator.serviceWorker.register(&#39;sw.js&#39;)})();
+&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+
+</code></pre>
+
+</body></html>
